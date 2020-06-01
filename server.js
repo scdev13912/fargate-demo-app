@@ -27,7 +27,7 @@ export function getImage() {
                 filename = 'gke';
                 break;
             default:
-                filename = 'gke';
+                filename = 'fargate';
         }
         const filePath = `resource/${filename}.html`;
         res.status(200);
@@ -42,7 +42,7 @@ export function getDefaultImage() {
 
     router.get('/', (req, res) => {
             res.status(200);
-        res.sendFile('resource/gke.html', {root: __dirname });
+        res.sendFile('resource/fargate.html', {root: __dirname });
     });
 
     return router;
