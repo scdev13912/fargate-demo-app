@@ -1,4 +1,4 @@
-version: 0.2
+version: 1.0
 phases:
   pre_build:
     commands:
@@ -22,6 +22,6 @@ phases:
       - docker push $REPO_URI:latest
       - docker push $REPO_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"demo-app","imageUri":"%s"}]' "$REPO_URI:$IMAGE_TAG" | tee imagedefinitions.json
+      - printf '[{"name":"sheng-demo-app","imageUri":"%s"}]' "$REPO_URI:$IMAGE_TAG" | tee imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
